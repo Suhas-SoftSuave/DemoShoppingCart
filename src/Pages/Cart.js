@@ -18,13 +18,13 @@ const RenderItem = ({ item, onValueChangeSet }) => {
                         <Text style={{ fontSize: 15 }}>{item?.Description}</Text>
 
 
-                        <View style={{ minWidth: 290, maxWidth: 290, flexDirection: "row", justifyContent: 'space-between' }}>
+                        <View style={{ minWidth: 290, maxWidth: 290, flexDirection: "row", justifyContent: 'space-between',paddingRight:10 }}>
                             <Text style={{ fontSize: 30 }}>{item?.Cost}$</Text>
                             <View style={{ borderStyle: 'solid', borderWidth: 1, borderColor: 'black', height: 40 }}>
                                 <Picker
 
                                     selectedValue={item.qty}
-                                    style={{ marginLeft: 5, height: 40, width: 100 }}
+                                    style={{ marginLeft: 5, height: 40, width: 100 ,}}
                                     onValueChange={(itemValue, itemIndex) => onValueChangeSet(itemValue, itemIndex, item)}
                                 >
                                     <Picker.Item label="1" value={1} />
