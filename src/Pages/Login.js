@@ -43,13 +43,15 @@ const Login = () => {
                 justifyContent: 'center',
                 marginLeft: 60,
                 paddingLeft: 30,
-                paddingBottom: 100
+                paddingBottom: 100,
+                
             }}>
                 <View style={{ marginBottom: 20 }} >
                     <Text style={{
                         fontSize: 20,
                         fontWeight: 'bold',
                         marginBottom: 10
+                        
                     }}>
                         UserName:</Text>
                     <TextInput
@@ -60,6 +62,7 @@ const Login = () => {
                             width: 250,
                             borderColor: 'black',
                             borderWidth: 1,
+                            borderRadius: 10,
                             marginBottom: 5,
                             paddingLeft: 10
                         }} />
@@ -83,6 +86,7 @@ const Login = () => {
                             borderColor: 'black',
                             borderWidth: 1,
                             marginBottom: 5,
+                            borderRadius:10,
                             marginLeft: 3,
                             paddingLeft: 10
                         }}
