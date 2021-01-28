@@ -36,17 +36,16 @@ const TitleBar = (props) => {
           }}
             source={camera} />
         </TouchableOpacity>
-        <TouchableOpacity style={{ maxHeight: 40, flexDirection: 'row' }}
+        <View style={{flexDirection:'row'}}>
+        <TouchableOpacity style={{ maxHeight: 40, }}
           onPress={() => {exit(); navigation.navigate('Login') }}>        
           <Image style={{
             maxHeight: 40,
             maxWidth: 40,
-            
-
           }}
             source={Exit} />
         </TouchableOpacity>
-        <TouchableOpacity style={{ maxHeight: 40 , flexDirection:'row-reverse'}} onPress={() => navigation.navigate('Cart')} >
+        <TouchableOpacity style={{ maxHeight: 40 ,alignItems:'flex-end'}} onPress={() => navigation.navigate('Cart')} >
         {props.stateItems.length > 0 &&
             <View style={{
               backgroundColor: 'red',
@@ -72,6 +71,7 @@ const TitleBar = (props) => {
           }}
             source={CartImage} />
         </TouchableOpacity>
+        </View>
       </View>}
 
       {props.home && !props.cart &&
