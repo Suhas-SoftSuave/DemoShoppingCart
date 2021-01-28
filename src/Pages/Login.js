@@ -49,7 +49,7 @@ const Login = () => {
                 <View style={{ marginBottom: 20 }} >
                     <Text style={{
                         fontSize: 20,
-                        fontWeight: 'bold',
+                        fontFamily:'OpenSans-Bold',
                         marginBottom: 10
                         
                     }}>
@@ -70,8 +70,9 @@ const Login = () => {
                 <View style={{ marginBottom: 20 }}>
                     <Text style={{
                         fontSize: 20,
-                        fontWeight: 'bold',
-                        marginBottom: 10
+                        
+                        marginBottom: 10,
+                        fontFamily: 'OpenSans-Bold'
                     }}>
                         Password:
             </Text>

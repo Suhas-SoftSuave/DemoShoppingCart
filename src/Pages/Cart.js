@@ -14,12 +14,12 @@ const RenderItem = ({ item, onValueChangeSet }) => {
                 <View style={{ flexDirection: 'row', marginBottom: 10 }}>
                     <Image style={{ height: 100, width: 100, margin: 10, backgroundColor: "#D3D3D3" }} source={{ uri: item?.URL }} />
                     <View >
-                        <Text style={{ marginBottom: 5, marginTop: 10, fontSize: 16, fontWeight: 'bold' }}>{item?.Name}</Text>
-                        <Text style={{ fontSize: 15 }}>{item?.Description}</Text>
+                        <Text style={{ marginBottom: 5, marginTop: 10, fontSize: 16,fontFamily:'OpenSans-Bold' }}>{item?.Name}</Text>
+                        <Text style={{ fontSize: 15,fontFamily:'OpenSans-SemiBold' }}>{item?.Description}</Text>
 
 
                         <View style={{ minWidth: 290, maxWidth: 290, flexDirection: "row", justifyContent: 'space-between',paddingRight:10 }}>
-                            <Text style={{ fontSize: 30 }}>{item?.Cost}$</Text>
+                            <Text style={{ fontSize: 30 ,fontFamily:'OpenSans-Bold'}}>{item?.Cost}$</Text>
                             <View style={{ borderStyle: 'solid', borderWidth: 1, borderColor: 'black', height: 40 }}>
                                 <Picker
 
@@ -106,7 +106,8 @@ const Cart = ({  stateItems,  setQty, deleteItem }) => {
                 <Text style={{
                     fontSize: 20,
                     paddingRight: 10,
-                    paddingTop: 5
+                    paddingTop: 5,
+                    fontFamily:'OpenSans-Bold'
                 }}>TOTAL : {totalone}$</Text>
             </View>
             <View style={{ paddingRight: 10, paddingLeft: 10 }}>

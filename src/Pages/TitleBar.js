@@ -27,7 +27,7 @@ const TitleBar = (props) => {
           }}
             source={camera} />
         </TouchableOpacity>
-        <TouchableOpacity style={{ maxHeight: 40 }} onPress={() => navigation.navigate('Cart')} >
+        <TouchableOpacity style={{ maxHeight: 40 , flexDirection:'row-reverse'}} onPress={() => navigation.navigate('Cart')} >
         {props.stateItems.length > 0 &&
             <View style={{
               backgroundColor: 'red',

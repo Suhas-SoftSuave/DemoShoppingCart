@@ -10,9 +10,16 @@ const RenderItem = ({ item, navigation }) => {
             <View style={{ padding: 10, flexDirection: 'row', marginBottom: 10, borderStyle: 'solid', borderBottomWidth: 1 }}>
                 <Image style={{ height: 100, width: 100 }} source={{ uri: item.URL }} />
                 <View style={{marginLeft:10}}>
-                    <Text style={{ fontSize: 30, color: "#000000" }}>{item.Name}</Text>
-                    <Text style={{ fontSize: 15, color: "#000000" }}>Description:{item.Description}</Text>
-                    <Text style={{ fontSize: 15, color: "#000000" }}>Cost:{item.Cost}</Text>                    
+                    <Text style={{ fontSize: 30, 
+                         fontFamily:'OpenSans-Bold',
+                         color: "#000000" }}>{item.Name}</Text>
+                    <Text style={{ fontSize: 15, 
+                        fontFamily:'OpenSans-SemiBold', 
+                        color: "#000000" }}>Description:{item.Description}</Text>
+                    <Text style={{ fontSize: 15,
+                         fontFamily:'OpenSans-SemiBold',
+                         color: "#000000"
+                          }}>Cost: {item.Cost}$</Text>                    
                 </View>
             </View>
         </Pressable>
