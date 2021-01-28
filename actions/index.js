@@ -20,3 +20,9 @@ export function delItem(index) {
          defindex:index,
     } 
 }
+
+export function checkOut(){
+    return {
+        type:'CHECKOUT'
+    }
+}

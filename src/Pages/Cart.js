@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {  Text, View, Image, Button,  Picker, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux'
-import { addItem,  delItem, setQty } from '../../actions';
+import { addItem,  checkOut,  delItem, setQty } from '../../actions';
 import TitleBar from './TitleBar';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
@@ -45,7 +45,7 @@ const RenderItem = ({ item, onValueChangeSet }) => {
         </View>
     )
 }
-const Cart = ({  stateItems,  setQty, deleteItem }) => {
+const Cart = ({  stateItems,  setQty, deleteItem , clearCart }) => {
     const [totalone, setTotalOne] = useState(0)
     const navigation = useNavigation()
 
@@ -56,6 +56,10 @@ const Cart = ({  stateItems,  setQty, deleteItem }) => {
         }
         setTotalOne(total)
     }, [stateItems])
+
+    const checkout = () =>{
+        clearCart()
+    }
 
    
     const onValueChangeSet = (value, index, item) => {
@@ -111,7 +115,7 @@ const Cart = ({  stateItems,  setQty, deleteItem }) => {
                 }}>TOTAL : {totalone}$</Text>
             </View>
             <View style={{ paddingRight: 10, paddingLeft: 10 }}>
-                <Button title='Check out' onPress={() => navigation.navigate('Home')}></Button>
+                <Button title='Check out' onPress={() => checkout()}></Button>
             </View>
         </View>
     )
@@ -127,7 +131,8 @@ const mapDispatchToProps = (dispatch) => {
         addItem: (state) => dispatch(addItem(state)),
 
         setQty: (value, index) => dispatch(setQty(value, index)),
-        deleteItem: (url) => dispatch(delItem(url))
+        deleteItem: (url) => dispatch(delItem(url)),
+        clearCart: () => dispatch(checkOut())
     };
 };
 

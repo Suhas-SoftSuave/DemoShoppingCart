@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import { AsyncStorage, Button, Text, TextInput, ToastAndroid, View } from 'react-native';
 
 
 const Login = () => {
@@ -20,10 +20,19 @@ const Login = () => {
         setPassword(e.nativeEvent.text)
 
     }
+    _storeData = async () => {
+        console.log('----------------storing data------------------')
+        AsyncStorage.setItem("User",JSON.stringify({Name:'Suhas',Pass:'Suhas'}))
+        
+    }
+   
     const onLogin = () => {
         if (name && password) {
             if (name == "Suhas" && password == "Suhas") {
+                _storeData()
+                ToastAndroid.show("added",ToastAndroid.SHORT)
                 navigation.navigate('Home')
+                              
             }
             else {
                 alert('Invalid Credentials')
@@ -31,6 +40,8 @@ const Login = () => {
         }
 
     }
+
+    
     return (
         <View style={{
             flex: 1,
@@ -93,11 +104,9 @@ const Login = () => {
                         }}
                     />
                 </View>
-                <View style={{ width: 250, }}>
+                   <View style={{ width: 250, marginTop:10 }}>
                     <Button title="Login" onPress={() => onLogin()}></Button>
                 </View>
-
-
             </View>
 
         </View>

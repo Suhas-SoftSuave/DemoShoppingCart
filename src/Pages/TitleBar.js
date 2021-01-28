@@ -1,10 +1,11 @@
-import {  Image,  Text, TouchableOpacity, View } from "react-native";
+import {  Alert, AsyncStorage, BackHandler, Image,  Text, ToastAndroid, TouchableOpacity, View } from "react-native";
 import React from 'react';
 import {  useNavigation } from '@react-navigation/native';
 import CartImage from '../assets/cart.png'
 import Back from '../assets/back.png'
 import { connect } from "react-redux";
 import camera from "../assets/camera.png"
+import Exit from "../assets/exit.png"
 
 const mapStateToProps = (state) => {
   return {
@@ -14,6 +15,14 @@ const mapStateToProps = (state) => {
 }
 const TitleBar = (props) => {
   const navigation = useNavigation();
+
+  const exit = () => {
+    AsyncStorage.removeItem("User")
+    Alert.alert("you have been signed out")
+    // BackHandler.exitApp();
+
+    ToastAndroid.show("cleared",ToastAndroid.SHORT)
+  }
   return (
 
     <View>
@@ -26,6 +35,16 @@ const TitleBar = (props) => {
             maxWidth: 40
           }}
             source={camera} />
+        </TouchableOpacity>
+        <TouchableOpacity style={{ maxHeight: 40, flexDirection: 'row' }}
+          onPress={() => {exit(); navigation.navigate('Login') }}>        
+          <Image style={{
+            maxHeight: 40,
+            maxWidth: 40,
+            
+
+          }}
+            source={Exit} />
         </TouchableOpacity>
         <TouchableOpacity style={{ maxHeight: 40 , flexDirection:'row-reverse'}} onPress={() => navigation.navigate('Cart')} >
         {props.stateItems.length > 0 &&

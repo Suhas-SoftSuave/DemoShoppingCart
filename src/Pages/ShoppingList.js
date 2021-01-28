@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { FlatList, Text, View, Image, SafeAreaView, Pressable } from 'react-native';
+import React, { useEffect } from 'react';
+import { FlatList, Text, View, Image, SafeAreaView, Pressable, BackHandler } from 'react-native';
 import { Items } from "../constants/Data";
 import TitleBar from './TitleBar';
 
@@ -28,6 +28,21 @@ const RenderItem = ({ item, navigation }) => {
 
 const ShoppingList = () => {
     const navigation = useNavigation()
+
+  
+
+   
+    useEffect(()=>{
+        BackHandler.addEventListener('hardwareBackPress',handleBackButton)
+        return () => {
+            BackHandler.removeEventListener('hardwareBackPress',handleBackButton)
+
+        }
+    },[])
+    handleBackButton = () => {
+        // navigation.goBack(null);
+        return true
+    }
     const home = false
     const cart = true
     return (

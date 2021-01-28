@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
-import {  Text, View, Image, Button, Modal } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {  Text, View, Image, Button, Modal, BackHandler } from 'react-native';
 import TitleBar from './TitleBar';
 import { addItem, calculateTotal } from '../../actions';
 import { connect } from 'react-redux';
@@ -17,6 +17,8 @@ const Details = ({ route, calculateTotal, addItem }) => {
     const item = route.params
     const cart = true
     const home = true
+
+    
     return (
         <View>
             <View style={{justifyContent:'center',alignItems:'center'}}>

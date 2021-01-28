@@ -47,7 +47,14 @@ const reducer = (state = initalstate, action) => {
            else{
             return newState
            }
-        }   
+        }
+        
+        case 'CHECKOUT':{
+            let newState = {
+                items:[]
+            }
+            return newState
+        }
        default: return state;
     }
  }
