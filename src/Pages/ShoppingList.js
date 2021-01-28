@@ -15,7 +15,7 @@ const RenderItem = ({ item, navigation }) => {
                          color: "#000000" }}>{item.Name}</Text>
                     <Text style={{ fontSize: 15, 
                         fontFamily:'OpenSans-SemiBold', 
-                        color: "#000000" }}>Description:{item.Description}</Text>
+                        color: "#000000" }}>Description: {item.Description}</Text>
                     <Text style={{ fontSize: 15,
                          fontFamily:'OpenSans-SemiBold',
                          color: "#000000"
